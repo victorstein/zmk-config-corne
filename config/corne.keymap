@@ -84,8 +84,8 @@
             bindings = <
 &kp ESC  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &trans  &trans  &trans  &trans  &trans  &trans
 &kp TAB  &kp Q         &kp W         &kp E         &kp R         &kp T     &trans  &trans  &trans  &trans  &trans  &trans
-&kp B    &kp A         &kp S         &kp D         &kp F         &kp G     &trans  &trans  &trans  &trans  &trans  &trans
-                                     &trans        &tog 3        &kp Y     &trans  &trans  &trans
+&kp Y    &kp A         &kp S         &kp D         &kp F         &kp G     &trans  &trans  &trans  &trans  &trans  &trans
+                                     &trans        &tog 3        &kp B     &trans  &trans  &trans
             >;
         };
     };
