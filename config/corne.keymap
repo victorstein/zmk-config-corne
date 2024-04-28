@@ -24,11 +24,20 @@
             hold-trigger-key-positions = <27 28 25 26 6 14 16 15 5 13 21 22>;
         };
 
-        shift_dance: shift_dance {
+        shift_dance_2: shift_dance_2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_DANCE";
+            label = "SHIFT_DANCE_2";
             #binding-cells = <0>;
             bindings = <&mo 2>, <&kp RIGHT_SHIFT>;
+
+            tapping-term-ms = <300>;
+        };
+
+        shift_dance_1: shift_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SHIFT_DANCE_1";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&kp RIGHT_SHIFT>;
 
             tapping-term-ms = <300>;
         };
@@ -45,10 +54,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp GRAVE       &kp Q          &kp W          &kp E          &kp R          &hold LG(LS(T)) T    &hold LG(Y) Y  &kp U         &kp I          &kp O    &kp P     &kp BSPC
-&kp LEFT_SHIFT  &hold LG(A) A  &hold LG(S) S  &hold LG(D) D  &hold LG(F) F  &kp G                &kp H          &kp J         &kp K          &kp L    &kp SEMI  &kp ENTER
-&kp LGUI        &hold LG(Z) Z  &hold LG(X) X  &hold LG(C) C  &hold LG(V) V  &kp B                &kp N          &kp M         &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
-                                              &kp LCTRL      &mo 1          &kp TAB              &kp SPACE      &shift_dance  &kp RIGHT_ALT
+&kp GRAVE       &kp Q          &kp W          &kp E          &kp R           &hold LG(LS(T)) T    &hold LG(Y) Y  &kp U           &kp I          &kp O    &kp P     &kp BSPC
+&kp LEFT_SHIFT  &hold LG(A) A  &hold LG(S) S  &hold LG(D) D  &hold LG(F) F   &kp G                &kp H          &kp J           &kp K          &kp L    &kp SEMI  &kp ENTER
+&kp LGUI        &hold LG(Z) Z  &hold LG(X) X  &hold LG(C) C  &hold LG(V) V   &kp B                &kp N          &kp M           &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_SHIFT
+                                              &kp LCTRL      &shift_dance_1  &kp TAB              &kp SPACE      &shift_dance_2  &kp RIGHT_ALT
             >;
         };
 
@@ -87,7 +96,7 @@
 &kp ESC  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &trans  &trans  &trans  &trans  &trans  &trans
 &kp TAB  &kp Q         &kp W         &kp E         &kp R         &kp T     &trans  &trans  &trans  &trans  &trans  &trans
 &kp Y    &kp A         &kp S         &kp D         &kp F         &kp G     &trans  &trans  &trans  &trans  &trans  &trans
-                                     &trans        &tog 3        &kp B     &trans  &trans  &trans
+                                     &tog 3        &trans        &kp B     &trans  &trans  &trans
             >;
         };
     };
