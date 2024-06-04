@@ -70,7 +70,7 @@
 
             bindings = <
 &kp ESC       &none     &kp UP    &none      &none   &none            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS                            &kp EQUAL                              &kp DELETE
-&trans        &kp LEFT  &kp DOWN  &kp RIGHT  &none   &kp BACKSPACE    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &hold LEFT_PARENTHESIS LEFT_BRACKET  &hold RIGHT_PARENTHESIS RIGHT_BRACKET  &kp SINGLE_QUOTE
+&kp TILDE     &kp LEFT  &kp DOWN  &kp RIGHT  &none   &kp BACKSPACE    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &hold LEFT_PARENTHESIS LEFT_BRACKET  &hold RIGHT_PARENTHESIS RIGHT_BRACKET  &kp SINGLE_QUOTE
 &kp LEFT_GUI  &none     &none     &none      &none   &kp ENTER        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans                               &trans                                 &trans
                                   &kp LCTRL  &trans  &kp SPACE        &kp SPACE     &kp NUMBER_0  &kp RALT
             >;
