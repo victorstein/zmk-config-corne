@@ -20,7 +20,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <900>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             hold-trigger-key-positions = <27 28 25 26 6 14 16 15 5 13 21 22>;
         };
 
