@@ -21,7 +21,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <900>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <27 28 25 26 6 14 16 15 5 13 21 22>;
+            hold-trigger-key-positions = <27 28 25 26 14 16 15 5 13>;
         };
 
         shift_dance_2: shift_dance_2 {
@@ -41,6 +41,35 @@
 
             tapping-term-ms = <300>;
         };
+
+        ctrl_dance: ctrl_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRL_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&mo 4>;
+
+            tapping-term-ms = <300>;
+        };
+
+        undo_dance: undo_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "UNDO_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp Z>, <&kp LG(LS(Z))>;
+
+            tapping-term-ms = <300>;
+        };
+
+        undo_hold: undo_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "UNDO_HOLD";
+            bindings = <&kp>, <&undo_dance>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <900>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <25>;
+        };
     };
 
     keymap {
@@ -54,10 +83,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp GRAVE       &kp Q          &kp W          &kp E          &kp R           &hold LG(LS(T)) T    &hold LG(Y) Y  &kp U           &kp I          &kp O    &kp P     &kp BSPC
-&kp LEFT_SHIFT  &hold LG(A) A  &hold LG(S) S  &hold LG(D) D  &hold LG(F) F   &kp G                &kp H          &kp J           &kp K          &kp L    &kp SEMI  &kp ENTER
-&kp LGUI        &hold LG(Z) Z  &hold LG(X) X  &hold LG(C) C  &hold LG(V) V   &kp B                &kp N          &kp M           &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_GUI
-                                              &kp LCTRL      &shift_dance_1  &kp TAB              &kp SPACE      &shift_dance_2  &kp RIGHT_ALT
+&kp GRAVE       &kp Q               &kp W          &kp E          &kp R           &hold LG(LS(T)) T    &hold LG(Y) Y  &kp U           &kp I          &kp O    &kp P     &kp BSPC
+&kp LEFT_SHIFT  &hold LG(A) A       &hold LG(S) S  &hold LG(D) D  &hold LG(F) F   &kp G                &kp H          &kp J           &kp K          &kp L    &kp SEMI  &kp ENTER
+&kp LGUI        &undo_hold LG(Z) 0  &hold LG(X) X  &hold LG(C) C  &hold LG(V) V   &kp B                &kp N          &kp M           &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_GUI
+                                                   &ctrl_dance    &shift_dance_1  &hold SPACE TAB      &kp SPACE      &shift_dance_2  &kp RIGHT_ALT
             >;
         };
 
@@ -97,6 +126,15 @@
 &kp TAB  &kp Q         &kp W         &kp E         &kp R         &kp T     &trans  &trans  &trans  &trans  &trans  &trans
 &kp Y    &kp A         &kp S         &kp D         &kp F         &kp G     &trans  &trans  &trans  &trans  &trans  &trans
                                      &tog 3        &trans        &kp B     &trans  &trans  &trans
+            >;
+        };
+
+        nvchad {
+            bindings = <
+&trans  &trans  &kp J   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp H   &kp K   &kp L   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
