@@ -131,10 +131,10 @@
 
         nvchad {
             bindings = <
-&trans  &trans  &kp K   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp H   &kp J   &kp L   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans     &kp LC(K)  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(H)  &kp LC(J)  &kp LC(L)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                              &trans     &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
