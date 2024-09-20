@@ -131,8 +131,8 @@
 
         nvchad {
             bindings = <
-&trans  &trans  &kp J   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp H   &kp K   &kp L   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp K   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp H   &kp J   &kp L   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
