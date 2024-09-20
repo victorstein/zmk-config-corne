@@ -70,6 +70,15 @@
             flavor = "tap-preferred";
             hold-trigger-key-positions = <25>;
         };
+
+        esc_dance: esc_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESC_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp LG(LS(ESC))>;
+
+            tapping-term-ms = <300>;
+        };
     };
 
     keymap {
@@ -83,7 +92,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp GRAVE       &kp Q               &kp W          &kp E          &kp R           &hold LG(LS(T)) T    &hold LG(Y) Y  &kp U           &kp I          &kp O    &kp P     &kp BSPC
+&esc_dance      &kp Q               &kp W          &kp E          &kp R           &hold LG(LS(T)) T    &hold LG(Y) Y  &kp U           &kp I          &kp O    &kp P     &kp BSPC
 &kp LEFT_SHIFT  &hold LG(A) A       &hold LG(S) S  &hold LG(D) D  &hold LG(F) F   &kp G                &kp H          &kp J           &kp K          &kp L    &kp SEMI  &kp ENTER
 &kp LGUI        &undo_hold LG(Z) 0  &hold LG(X) X  &hold LG(C) C  &hold LG(V) V   &kp B                &kp N          &kp M           &kp COMMA      &kp DOT  &kp FSLH  &kp RIGHT_GUI
                                                    &ctrl_dance    &shift_dance_1  &hold SPACE TAB      &kp SPACE      &shift_dance_2  &kp RIGHT_ALT
