@@ -140,10 +140,10 @@
 
         nvchad {
             bindings = <
-&trans  &trans     &kp LC(K)  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(H)  &kp LC(J)  &kp LC(L)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                              &trans     &trans  &trans    &trans  &trans  &trans
+&trans        &trans     &kp LC(K)  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp CAPSLOCK  &kp LC(H)  &kp LC(J)  &kp LC(L)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans     &trans     &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                    &trans     &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
