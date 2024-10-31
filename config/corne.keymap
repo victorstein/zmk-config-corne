@@ -6,22 +6,21 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 
 &led_strip { chain-length = <27>; };
 
 / {
     behaviors {
-        hold: hold {
+        hold_left: hold_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD";
+            label = "HOLD_LEFT";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <900>;
-            flavor = "tap-preferred";
-            hold-trigger-key-positions = <27 28 25 26 14 16 15 5 13>;
+            tapping-term-ms = <200>;
+            flavor = "tap-unless-interrupted";
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;
         };
 
         shift_dance_2: shift_dance_2 {
@@ -46,7 +45,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CTRL_DANCE";
             #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&mo 4>;
+            bindings = <&kp LCTRL>, <&mo 0>;
 
             tapping-term-ms = <300>;
         };
@@ -84,9 +83,20 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ALT_DANCE";
             #binding-cells = <0>;
-            bindings = <&kp RIGHT_ALT>, <&mo 4>;
+            bindings = <&kp RIGHT_ALT>, <&mo 0>;
 
             tapping-term-ms = <300>;
+        };
+
+        hold_right: hold_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-unless-interrupted";
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
         };
     };
 
@@ -101,10 +111,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q                 &kp W             &kp E               &kp R                 &hold LG(LS(T)) T    &kp Y      &kp U           &kp I           &kp O              &kp P                     &kp BSPC
-&kp LEFT_SHIFT  &hold LEFT_COMMAND A  &hold LEFT_ALT S  &hold LEFT_SHIFT D  &hold LEFT_CONTROL F  &kp G                &kp H      &hold RCTRL J   &hold RSHIFT K  &hold RIGHT_ALT L  &hold RIGHT_COMMAND SEMI  &kp ENTER
-&kp LGUI        &kp Z                 &kp X             &kp C               &kp V                 &kp B                &kp N      &kp M           &kp COMMA       &kp DOT            &kp FSLH                  &kp RIGHT_GUI
-                                                        &kp LEFT_CONTROL    &shift_dance_1        &hold SPACE TAB      &kp SPACE  &shift_dance_2  &alt_dance
+&kp ESC         &kp Q                      &kp W                  &kp E                    &kp R                      &hold_left LG(LS(T)) T    &kp Y      &kp U                &kp I                 &kp O                    &kp P                           &kp BSPC
+&kp LEFT_SHIFT  &hold_left LEFT_COMMAND A  &hold_left LEFT_ALT S  &hold_left LEFT_SHIFT D  &hold_left LEFT_CONTROL F  &kp G                     &kp H      &hold_right RCTRL J  &hold_right RSHIFT K  &hold_right RIGHT_ALT L  &hold_right RIGHT_COMMAND SEMI  &kp ENTER
+&kp LGUI        &kp Z                      &kp X                  &kp C                    &kp V                      &kp B                     &kp N      &kp M                &kp COMMA             &kp DOT                  &kp FSLH                        &kp RIGHT_GUI
+                                                                  &kp LEFT_CONTROL         &mo 1                      &hold_left SPACE TAB      &kp SPACE  &mo 2                &alt_dance
             >;
         };
 
@@ -116,10 +126,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp GRAVE     &none     &kp UP    &none      &none          &none            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS                      &kp EQUAL                              &kp DELETE
-&kp TILDE     &kp LEFT  &kp DOWN  &kp RIGHT  &kp PAGE_UP    &kp BACKSPACE    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &hold LEFT_BRACE LEFT_BRACKET  &hold RIGHT_PARENTHESIS RIGHT_BRACKET  &kp SINGLE_QUOTE
-&kp LEFT_GUI  &none     &none     &none      &kp PAGE_DOWN  &kp ENTER        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans                         &trans                                 &trans
-                                  &kp LCTRL  &trans         &kp SPACE        &kp SPACE     &kp NUMBER_0  &kp RALT
+&kp GRAVE     &none     &kp UP    &none      &none   &none            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS  &kp EQUAL  &kp DELETE
+&kp TILDE     &kp LEFT  &kp DOWN  &kp RIGHT  &none   &kp BACKSPACE    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none      &none      &none
+&kp LEFT_GUI  &none     &none     &none      &none   &kp ENTER        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans     &trans     &trans
+                                  &kp LCTRL  &trans  &kp SPACE        &kp SPACE     &kp NUMBER_0  &kp RALT
             >;
         };
 
@@ -131,10 +141,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp EXCL       &kp AT         &kp HASH       &kp DLLR       &kp PRCNT            &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&tog 3      &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_CLR           &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT   &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &ext_power EP_TOG    &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                          &kp LGUI       &trans         &kp SPACE            &kp RET    &trans     &kp RALT
+&kp ESCAPE  &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT     &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp KP_ASTERISK  &kp BSPC
+&tog 4      &none         &none         &none         &none         &none         &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH         &kp GRAVE
+&kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE         &kp TILDE
+                                        &kp LGUI      &trans        &kp SPACE     &kp RET    &trans     &kp RALT
+            >;
+        };
+
+        NVIM {
+            bindings = <
+&trans    &trans     &kp LC(K)  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp CAPS  &kp LC(J)  &kp LC(H)  &kp LC(L)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &trans     &trans     &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                &trans     &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -146,16 +165,14 @@
                                      &tog 3        &trans        &kp B     &trans  &trans  &trans
             >;
         };
-
-        nvchad {
-            bindings = <
-&trans        &trans     &kp LC(K)  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&kp CAPSLOCK  &kp LC(H)  &kp LC(J)  &kp LC(L)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans        &trans     &trans     &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                    &trans     &trans  &trans    &trans  &trans  &trans
-            >;
-        };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        NVIM_COND {
+            if-layers = <0 1>;
+            then-layer = <3>;
+        };
+    };
 };
