@@ -18,74 +18,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;
-        };
-
-        shift_dance_2: shift_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_DANCE_2";
-            #binding-cells = <0>;
-            bindings = <&mo 2>, <&kp RIGHT_SHIFT>;
-
-            tapping-term-ms = <300>;
-        };
-
-        shift_dance_1: shift_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_DANCE_1";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&kp RIGHT_SHIFT>;
-
-            tapping-term-ms = <300>;
-        };
-
-        ctrl_dance: ctrl_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CTRL_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp LCTRL>, <&mo 0>;
-
-            tapping-term-ms = <300>;
-        };
-
-        undo_dance: undo_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "UNDO_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp Z>, <&kp LG(LS(Z))>;
-
-            tapping-term-ms = <300>;
-        };
-
-        undo_hold: undo_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "UNDO_HOLD";
-            bindings = <&kp>, <&undo_dance>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <900>;
+            tapping-term-ms = <400>;
             flavor = "tap-preferred";
-            hold-trigger-key-positions = <25>;
-        };
-
-        esc_dance: esc_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ESC_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE>, <&kp ESC>;
-
-            tapping-term-ms = <300>;
-        };
-
-        alt_dance: alt_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ALT_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT_ALT>, <&mo 0>;
-
-            tapping-term-ms = <300>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
         };
 
         hold_right: hold_right {
@@ -94,9 +29,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-unless-interrupted";
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29>;
+            tapping-term-ms = <400>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35>;
         };
     };
 
@@ -111,10 +46,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q                      &kp W                  &kp E                    &kp R                      &hold_left LG(LS(T)) T    &kp Y      &kp U                &kp I                 &kp O                    &kp P                           &kp BSPC
-&kp LEFT_SHIFT  &hold_left LEFT_COMMAND A  &hold_left LEFT_ALT S  &hold_left LEFT_SHIFT D  &hold_left LEFT_CONTROL F  &kp G                     &kp H      &hold_right RCTRL J  &hold_right RSHIFT K  &hold_right RIGHT_ALT L  &hold_right RIGHT_COMMAND SEMI  &kp ENTER
-&kp LGUI        &kp Z                      &kp X                  &kp C                    &kp V                      &kp B                     &kp N      &kp M                &kp COMMA             &kp DOT                  &kp FSLH                        &kp RIGHT_GUI
-                                                                  &kp LEFT_CONTROL         &mo 1                      &hold_left SPACE TAB      &kp SPACE  &mo 2                &alt_dance
+&kp ESC         &kp Q                      &kp W                  &kp E                    &kp R                      &mt LG(LS(T)) T    &kp Y      &kp U                &kp I                 &kp O                    &kp P                           &kp BSPC
+&kp LEFT_SHIFT  &hold_left LEFT_COMMAND A  &hold_left LEFT_ALT S  &hold_left LEFT_SHIFT D  &hold_left LEFT_CONTROL F  &kp G              &kp H      &hold_right RCTRL J  &hold_right RSHIFT K  &hold_right RIGHT_ALT L  &hold_right RIGHT_COMMAND SEMI  &kp ENTER
+&kp LGUI        &kp Z                      &kp X                  &kp C                    &kp V                      &kp B              &kp N      &kp M                &kp COMMA             &kp DOT                  &kp FSLH                        &kp RIGHT_GUI
+                                                                  &kp LEFT_CONTROL         &mo 1                      &kp TAB            &kp SPACE  &mo 2                &kp RIGHT_ALT
             >;
         };
 
