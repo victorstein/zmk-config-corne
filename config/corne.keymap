@@ -86,7 +86,7 @@
         NVIM {
             bindings = <
 &trans    &trans     &kp LC(K)  &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&kp CAPS  &kp LC(J)  &kp LC(H)  &kp LC(L)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp CAPS  &kp LC(J)  &kp LC(H)  &kp LC(L)  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &kp DOUBLE_QUOTES
 &trans    &trans     &trans     &trans     &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                                 &trans     &trans  &trans    &trans  &trans  &trans
             >;
