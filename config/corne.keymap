@@ -79,7 +79,7 @@
 &kp ESCAPE  &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT     &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp KP_ASTERISK  &kp BSPC
 &tog 4      &none         &none         &none         &none         &none         &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH         &none
 &kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE         &kp TILDE
-                                        &kp LGUI      &trans        &kp SPACE     &kp RET    &trans     &kp RALT
+                                        &kp LGUI      &mo 1         &kp SPACE     &kp RET    &trans     &kp RALT
             >;
         };
 
