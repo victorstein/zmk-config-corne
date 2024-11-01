@@ -38,7 +38,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer_1 {
+        Layer_0 {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -53,7 +53,7 @@
             >;
         };
 
-        layer_2 {
+        Layer_1 {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -68,7 +68,7 @@
             >;
         };
 
-        layer_3 {
+        Layer_2 {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -77,9 +77,9 @@
 
             bindings = <
 &kp ESCAPE  &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT     &kp CARET  &kp AMPS   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp KP_ASTERISK  &kp BSPC
-&tog 4      &none         &none         &none         &none         &none         &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH         &none
+&tog 4      &none         &none         &none         &none         &none         &kp MINUS  &kp EQUAL  &kp LBKT              &kp RBKT               &kp BSLH         &kp DOUBLE_QUOTES
 &kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_CLR    &kp UNDER  &kp PLUS   &kp LBRC              &kp RBRC               &kp PIPE         &kp TILDE
-                                        &kp LGUI      &mo 1         &kp SPACE     &kp RET    &trans     &kp RALT
+                                        &kp LGUI      &trans        &kp SPACE     &kp RET    &trans     &kp RALT
             >;
         };
 
@@ -105,8 +105,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        NVIM_COND {
-            if-layers = <0 1>;
+        NVIM_CD {
+            if-layers = <1 2>;
             then-layer = <3>;
         };
     };
