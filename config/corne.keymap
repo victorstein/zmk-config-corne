@@ -20,7 +20,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             flavor = "tap-unless-interrupted";
-            hold-trigger-key-positions = <19 20 21 22 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 38 39>;
+            hold-trigger-key-positions = <19 20 21 22 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 38 39 16 14 15 13>;
         };
 
         hold_right: hold_right {
@@ -31,7 +31,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             flavor = "tap-unless-interrupted";
-            hold-trigger-key-positions = <13 14 15 16 0 1 2 3 4 5 12 13 14 15 16 17 26 27 28 29 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 38 39>;
+            hold-trigger-key-positions = <13 14 15 16 0 1 2 3 4 5 12 13 14 15 16 17 26 27 28 29 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 38 39 19 20 21 22>;
         };
     };
 
