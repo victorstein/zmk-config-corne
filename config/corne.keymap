@@ -35,6 +35,16 @@
             hold-trigger-key-positions = <13 14 15 16 0 1 2 3 4 5 12 13 14 15 16 17 26 27 28 29 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 38 39>;
             quick-tap-ms = <0>;
         };
+
+        hold: hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -48,10 +58,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q        &kp W        &kp E                      &kp R                    &mt LG(LS(T)) T    &kp Y      &kp U                      &kp I                        &kp O    &kp P     &kp BSPC
-&kp LEFT_SHIFT  &mt LG(A) A  &mt LG(S) S  &hold_left LEFT_CONTROL D  &hold_left LEFT_SHIFT F  &kp G              &kp H      &hold_right RIGHT_SHIFT J  &hold_right RIGHT_CONTROL K  &kp L    &kp SEMI  &kp ENTER
-&kp LGUI        &mt LG(Z) Z  &mt LG(X) X  &mt LG(C) C                &mt LG(V) V              &kp B              &kp N      &kp M                      &kp COMMA                    &kp DOT  &kp FSLH  &kp RIGHT_GUI
-                                          &kp LEFT_CONTROL           &mo 1                    &kp TAB            &kp SPACE  &mo 2                      &kp RIGHT_ALT
+&kp ESC         &kp Q          &kp W          &kp E                      &kp R                    &mt LG(LS(T)) T    &kp Y      &kp U                      &kp I                        &kp O    &kp P     &kp BSPC
+&kp LEFT_SHIFT  &hold LG(A) A  &hold LG(S) S  &hold_left LEFT_CONTROL D  &hold_left LEFT_SHIFT F  &kp G              &kp H      &hold_right RIGHT_SHIFT J  &hold_right RIGHT_CONTROL K  &kp L    &kp SEMI  &kp ENTER
+&kp LGUI        &hold LG(Z) Z  &hold LG(X) X  &hold LG(C) C              &hold LG(V) V            &kp B              &kp N      &kp M                      &kp COMMA                    &kp DOT  &kp FSLH  &kp RIGHT_GUI
+                                              &kp LEFT_CONTROL           &mo 1                    &kp TAB            &kp SPACE  &mo 2                      &kp RIGHT_ALT
             >;
         };
 
