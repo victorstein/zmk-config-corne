@@ -115,10 +115,10 @@
 
         NVIM {
             bindings = <
-&kp LG(GRAVE)  &kp LG(W)  &kp LC(K)  &trans     &trans         &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&kp CAPS       &kp LC(H)  &kp LC(J)  &kp LC(L)  &kp LA(TILDE)  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&bootloader    &trans     &trans     &trans     &trans         &trans    &trans  &trans  &trans  &trans  &trans  &bootloader
-                                     &trans     &trans         &trans    &trans  &trans  &trans
+&kp LG(GRAVE)  &kp LG(W)  &kp LC(K)  &trans     &trans         &trans           &trans  &trans  &trans  &trans  &trans  &trans
+&kp CAPS       &kp LC(H)  &kp LC(J)  &kp LC(L)  &kp LA(TILDE)  &kp LC(TILDE)    &trans  &trans  &trans  &trans  &trans  &trans
+&bootloader    &trans     &trans     &trans     &trans         &trans           &trans  &trans  &trans  &trans  &trans  &bootloader
+                                     &trans     &trans         &trans           &trans  &trans  &trans
             >;
         };
 
